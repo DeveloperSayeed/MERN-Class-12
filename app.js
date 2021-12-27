@@ -4,12 +4,12 @@ const ageYear = document.querySelector("#ageyear");
 const result = document.querySelector("#result");
 
 
-ageName.addEventListener("click", () => {
+ageName.addEventListener("keyup", () => {
     result.innerHTML = "";
     button.innerHTML = "Check Your Result"
     button.removeAttribute("style")
 })
-ageYear.addEventListener("click", () => {
+ageYear.addEventListener("keyup", () => {
     result.innerHTML = "";
     button.innerHTML = "Check Your Result"
     button.removeAttribute("style")

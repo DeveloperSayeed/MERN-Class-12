@@ -7,10 +7,12 @@ const result = document.querySelector("#result");
 ageName.addEventListener("click", () => {
     result.innerHTML = "";
     button.innerHTML = "Check Your Result"
+    button.removeAttribute("style")
 })
 ageYear.addEventListener("click", () => {
     result.innerHTML = "";
     button.innerHTML = "Check Your Result"
+    button.removeAttribute("style")
 })
 
 button.addEventListener("click", () => {
@@ -25,11 +27,15 @@ button.addEventListener("click", () => {
 
 
 
-    if (nameResult && ageResult ) {
+    if (nameResult && ageResult) {
+
         result.innerHTML = ageCal(ageName, ageYear);
+
         document.getElementById('agename').value = "";
         document.getElementById('ageyear').value = "";
-        button.innerHTML="Done";
+        button.innerHTML = "You Find Your Result";button.setAttribute("style","background-color:red; box-shadow: none;  border: none;")
+
+
     } else if (!nameResult && ageResult) {
         result.innerHTML = `<p class="alert-danger p-4">Plase Write Your Valid  Name</p>`;
 
@@ -41,6 +47,5 @@ button.addEventListener("click", () => {
         result.innerHTML = `<p class="alert-danger p-4">Plase Write Your Valid Right Information</p>`;
     }
 
-    // document.getElementById('agename').value = "";
-    // document.getElementById('ageyear').value = "";
+
 });

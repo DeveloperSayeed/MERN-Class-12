@@ -44,3 +44,8 @@ function ageCalStatus(age) {
     }
 
 }
+
+
+// Currency method
+
+

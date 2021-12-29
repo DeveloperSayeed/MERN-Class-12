@@ -1,3 +1,5 @@
+// Age Calculator Method
+
 const button = document.querySelector("#button")
 const ageName = document.querySelector("#agename");
 const ageYear = document.querySelector("#ageyear");
@@ -47,5 +49,22 @@ button.addEventListener("click", () => {
         result.innerHTML = `<p class="alert-danger p-4">Plase Write Your Valid Right Information</p>`;
     }
 
-
 });
+
+
+// Currency Conveter Method
+
+const curamount = document.getElementById("curamount").value
+const curselect = document.getElementById("curselect").value
+const curbutton = document.getElementById("curbutton").value
+const curresult = document.getElementById("curresult").value
+
+
+curbutton.addEventListener("click" ,() => {
+
+
+    
+    
+})
+
+

@@ -16,32 +16,78 @@
 
 <body>
 
-    <div class="card w-50 mx-auto mt-5 shadow ">
-        <div class="card-header py-4">
-            <h1 class="text-center">Age Calculator</h1>
-        </div>
-        <div class="card-body py-5">
-            <form>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="agecal mb-5">
+                    <div class="card w-100 mx-auto mt-5 shadow ">
+                        <div class="card-header py-4">
+                            <h1 class="text-center">Age Calculator</h1>
+                        </div>
+                        <div class="card-body py-5">
+                            <form>
 
-                <div class="form-group">
-                    <input class="form-control form-control-lg" type="text" name="name"
-                        placeholder="Enter Your Full Name" id="agename" required>
+                                <div class="form-group">
+                                    <input class="form-control form-control-lg" type="text" name="name"
+                                        placeholder="Enter Your Full Name" id="agename" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input class="form-control form-select-lg" type="tel" name="date"
+                                        placeholder="Enter Your Date Of Year" id="ageyear" required>
+                                </div> <br>
+
+                            </form>
+                            <button id="button" class="btn btn-success btn-lg w-100" type="submit"
+                                onclick="validate()">Check Your Result</button>
+
+
+                        </div>
+                        <div class="card-footer">
+                            <p class=" p-4" id="result"> </p>
+                        </div>
+                    </div>
+
                 </div>
-                <br>
-                <div class="form-group">
-                    <input class="form-control form-select-lg" type="tel" name="date"
-                        placeholder="Enter Your Date Of Year" id="ageyear" required>
-                </div> <br>
+            </div>
+            <div class="col-xl-6">
+                <div class="currency mt-5 shadow rounded-3">
+                    <div class="w-100 card m-auto">
+                        <div class="card-header text-center py-4">
+                            <h1>Currency Conveter</h1>
+                        </div>
+                        <div class="card-body py-5">
+                            <form action="#">
+                                <input id="curamount" type="tel" class="form-control form-control-lg mb-4 " placeholder="Enter Your Amount">
 
-            </form>
-            <button id="button" class="btn btn-success btn-lg w-100" type="submit" onclick="validate()">Check Your Result</button>
+                                <select id="curselect" class="form-select form-select-lg mb-4" aria-label="Default select example">
+                                    <option selected>Select Your Currency</option>
+                                    <option value="85.78">USD</option>
+                                    <option value="96.97">ERO</option>
+                                    <option value="66.94">CAD</option>
+                                    <option value="22.87">SAR</option>
+                                    <option value="115.21">GBP</option>
+                                    <option value="20.52">MYR</option>
+                                    <option value="23.35">AED</option>
+                                </select>
+                                <input id="curbutton" type="button" value="Convert" class="btn btn-warning btn-lg w-100">
+                            </form>
+                        </div>
+                        <div class="card-footer ">
+                            <p id="curresult" class="py-4 " id="currencyresult"></p>
+                        </div>
 
-
-        </div>
-        <div class="card-footer">
-            <p class=" p-4" id="result"> </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
+
+
+
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

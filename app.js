@@ -6,16 +6,50 @@ const ageYear = document.querySelector("#ageyear");
 const result = document.querySelector("#result");
 
 
+ageName.addEventListener("blur", () => {
+    if (ageName.value == "") {
+        ageName.style.border = "1px solid red";
+
+    }
+})
+ageYear.addEventListener("blur", () => {
+    if (ageYear.value == "") {
+        ageYear.style.border = "1px solid red";
+
+    }
+})
+
+
 ageName.addEventListener("keyup", () => {
     result.innerHTML = "";
     button.innerHTML = "Check Your Result"
     button.removeAttribute("style")
+
+    let ageNameREXP = /^[A-Za-z]*$/;
+    if (ageNameREXP.test(ageName.value) == false) {
+        ageName.style.border = "1px solid red";
+    } else {
+        ageName.style.border = "1px solid green";
+    }
+
 })
 ageYear.addEventListener("keyup", () => {
     result.innerHTML = "";
     button.innerHTML = "Check Your Result"
     button.removeAttribute("style")
+
+
+    let ageYearREXP = /^[0-9]{4}$/;
+    if (ageYearREXP.test(ageYear.value) == "") {
+        ageYear.style.border = "1px solid red";
+
+    } else {
+        ageYear.style.border = "1px solid green";
+    }
+
 })
+
+
 
 button.addEventListener("click", () => {
 
@@ -35,7 +69,9 @@ button.addEventListener("click", () => {
 
         document.getElementById('agename').value = "";
         document.getElementById('ageyear').value = "";
-        button.innerHTML = "You Find Your Result";button.setAttribute("style","background-color:red; box-shadow: none;  border: none;")
+        button.innerHTML = "You Find Your Result";
+        button.setAttribute("style", "background-color:red; box-shadow: none;  border: none;")
+
 
 
     } else if (!nameResult && ageResult) {
@@ -52,19 +88,192 @@ button.addEventListener("click", () => {
 });
 
 
+
+
+
+
+
+
+
+
 // Currency Conveter Method
 
-const curamount = document.getElementById("curamount").value
-const curselect = document.getElementById("curselect").value
-const curbutton = document.getElementById("curbutton").value
-const curresult = document.getElementById("curresult").value
+const curAmount = document.getElementById("curamount")
+const curSelect = document.getElementById("curselect")
+const formsubmit = document.getElementById("formsubmit")
+const currencyresult = document.getElementById("currencyresult")
 
 
-curbutton.addEventListener("click" ,() => {
 
+
+curAmount.addEventListener("blur", () => {
 
     
-    
+    if (curAmount.value == "") {
+        curAmount.style.border = "1px solid red";
+    } else {
+        curAmount.style.border = "1px solid green";
+    }
+});
+
+curAmount.addEventListener("keyup", () => {
+    curAmount.style.border = "";
 })
 
 
+
+formsubmit.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+
+
+    let REXP = /^[0-9.]*$/;
+
+
+    if (REXP.test(curAmount.value) == false) {
+        currencyresult.innerHTML = `<p class="alert alert-danger"> Plz Input Right Data </p>  `
+
+
+    } else if (curAmount.value == "") {
+        currencyresult.innerHTML = `<p class="alert alert-danger"> BDT Amount Must Be Requird </p>  `
+
+
+
+    } else if (
+        curSelect.value === curSelect.children[0].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-danger"> Please Select Your Cuurency  </p> `
+
+
+    } else if (
+        curSelect.value === curSelect.children[1].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[1].value} USD  </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    } else if (
+        curSelect.value === curSelect.children[2].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[2].value} ERO </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    } else if (
+        curSelect.value === curSelect.children[3].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[3].value} CAD </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    } else if (
+        curSelect.value === curSelect.children[4].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[4].value} SAR </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    } else if (
+        curSelect.value === curSelect.children[5].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[5].value} GBP </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    } else if (
+        curSelect.value === curSelect.children[6].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[6].value} MYR </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    } else if (
+        curSelect.value === curSelect.children[7].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[7].value} AED </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    } else if (
+        curSelect.value === curSelect.children[8].value
+    ) {
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[8].value}  </p> `
+        curAmount.value = "";
+        curSelect.value = curSelect.children[0].value;
+    }
+
+})
+
+
+
+
+
+
+
+// Marage Calculation 
+
+
+const marageinput = document.querySelector("#marageinput")
+const marageyear = document.querySelector("#marageyear")
+const maragender = document.querySelector("#maragender")
+const maragebutton = document.querySelector("#maragebutton")
+const marrageresult = document.querySelector("#marrageresult")
+
+
+
+let marageinputREXP = /^[a-zA-Z ]*$/;
+let marageyearREXP = /^[0-9]{4}$/;
+
+marageinput.addEventListener("blur", () => {
+    if (marageinput.value == "") {
+        marageinput.style.border = "1px solid red";
+    }
+
+});
+marageinput.addEventListener("keyup", () => {
+
+    if (marageinputREXp.test(marageinput.value) == "") {
+        marageinput.style.border = "1px solid red";
+    } else {
+        marageinput.style.border = "1px solid green";
+    }
+});
+
+
+
+maragebutton.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    if (marageinputREXP.test(marageinput.value) == "") 
+    {
+        marageinput.style.border = "1px solid red";
+    } else{
+        marageinput.style.border = "1px solid green";
+    }
+
+    if (marageyearREXP.test(marageyear.value) == "") 
+    {
+        marageyear.style.border = "1px solid red";
+    } else{
+        marageyear.style.border = "1px solid green";
+    }
+
+    if (maragender.value == maragender.children[0].value) 
+    {
+        maragender.style.border = "1px solid red";
+    } else{
+        maragender.style.border = "1px solid green";
+    }
+
+
+
+
+
+    if (marageinputREXp.test(marageinput.value) === false || marageyearREXP.test(marageyear.value) == false) {
+        marrageresult.innerHTML = `<p class="alert alert-danger"> plz right Data</p> `
+
+    } else {
+        marrageresult.innerHTML = `<p class="alert alert-success"> plz right Data</p> `
+    }
+
+
+
+
+
+
+
+})

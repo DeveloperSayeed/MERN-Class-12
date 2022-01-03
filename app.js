@@ -6,6 +6,7 @@ const ageYear = document.querySelector("#ageyear");
 const result = document.querySelector("#result");
 
 
+
 ageName.addEventListener("blur", () => {
     if (ageName.value == "") {
         ageName.style.border = "1px solid red";
@@ -25,7 +26,7 @@ ageName.addEventListener("keyup", () => {
     button.innerHTML = "Check Your Result"
     button.removeAttribute("style")
 
-    let ageNameREXP = /^[A-Za-z]*$/;
+    let ageNameREXP = /^[A-Za-z ]*$/;
     if (ageNameREXP.test(ageName.value) == false) {
         ageName.style.border = "1px solid red";
     } else {
@@ -145,13 +146,18 @@ formsubmit.addEventListener("submit", (e) => {
         currencyresult.innerHTML = `<p class="alert alert-danger"> Please Select Your Cuurency  </p> `
 
 
-    } else if (
+    } 
+    
+    else if (
         curSelect.value === curSelect.children[1].value
     ) {
         currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[1].value} USD  </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
-    } else if (
+    } 
+    
+    
+    else if (
         curSelect.value === curSelect.children[2].value
     ) {
         currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[2].value} ERO </p> `
@@ -220,23 +226,37 @@ let marageyearREXP = /^[0-9]{4}$/;
 marageinput.addEventListener("blur", () => {
     if (marageinput.value == "") {
         marageinput.style.border = "1px solid red";
-    }
-
+    } 
 });
+
 marageinput.addEventListener("keyup", () => {
 
-    if (marageinputREXp.test(marageinput.value) == "") {
+    if (marageinputREXP.test(marageinput.value) == "") {
         marageinput.style.border = "1px solid red";
     } else {
         marageinput.style.border = "1px solid green";
     }
 });
 
+marageyear.addEventListener("blur", ()=> {
+    if (marageyear.value == "") {
+        marageyear.style.border = "1px solid red";
+    } 
+});
 
+marageyear.addEventListener("keyup", () => {
+
+    if (marageyearREXP.test(marageyear.value) == "") {
+        marageyear.style.border = "1px solid red";
+    } else {
+        marageyear.style.border = "1px solid green";
+    }
+});
 
 maragebutton.addEventListener("submit", (e) => {
 
     e.preventDefault();
+
 
     if (marageinputREXP.test(marageinput.value) == "") 
     {
@@ -259,21 +279,16 @@ maragebutton.addEventListener("submit", (e) => {
         maragender.style.border = "1px solid green";
     }
 
+})
 
+maragebutton.addEventListener("click", () =>{
 
-
-
-    if (marageinputREXp.test(marageinput.value) === false || marageyearREXP.test(marageyear.value) == false) {
+    if (marageinputREXP.test(marageinput.value) === false || marageyearREXP.test(marageyear.value) == false || maragender.value == maragender.children[0].value ) {
         marrageresult.innerHTML = `<p class="alert alert-danger"> plz right Data</p> `
 
     } else {
-        marrageresult.innerHTML = `<p class="alert alert-success"> plz right Data</p> `
+        marrageresult.innerHTML = `<p class="alert alert-success"> Data Stable</p> `
     }
-
-
-
-
-
-
-
 })
+
+

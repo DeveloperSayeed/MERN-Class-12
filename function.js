@@ -16,36 +16,87 @@ function ageCalStatus(age) {
             status: "primary"
         }
 
-    } else if ( age > 10 && age <=22) {
-        return{
+    } else if (age > 10 && age <= 22) {
+        return {
             name: "Jobok",
-            status : "success" 
+            status: "success"
         }
-    } else if ( age > 22 & age <= 35) {
-        return{
+    } else if (age > 22 & age <= 35) {
+        return {
             name: "Young",
-            status : "info" 
+            status: "info"
         }
-    } else if (age >35 && age <= 60 ) {
-        return{
-            name: "Old" ,
-            status : "warning" 
+    } else if (age > 35 && age <= 60) {
+        return {
+            name: "Old",
+            status: "warning"
         }
-    } else if ( age > 60 && age <= 100) {
-        return{
+    } else if (age > 60 && age <= 100) {
+        return {
             name: "Very-Old",
-            status : "danger"  
+            status: "danger"
         }
-    } else{
-        return{
+    } else {
+        return {
             name: "Bhoot / Jin",
-            status : "dark"  
+            status: "dark"
         }
     }
 
 }
 
 
-// Currency method
 
+
+
+// Marage  method
+
+
+function marageCal(name, year) {
+    let date = new Date();
+    let age = date.getFullYear() - year;
+    let marageAge = marageGgeCalStatus(age)
+    return `  <p class = "alert-green p-4"> Hi ${name} Your Gender ${maragender.value} you are ${age} years Old & You are ${marageAge.name} </p>`
+
+
+}
+
+
+function marageGgeCalStatus(age) {
+
+    
+    if (age > 0 && age <= 10) {
+        return {
+            name: "Baby",
+            status: "primary"
+        }
+
+    } else if (age > 10 && age <= 22) {
+        return {
+            name: "Jobok",
+            status: "success"
+        }
+    } else if (age > 22 & age <= 35) {
+        return {
+            name: "Young",
+            status: "info"
+        }
+    } else if (age > 35 && age <= 60) {
+        return {
+            name: "Old",
+            status: "warning"
+        }
+    } else if (age > 60 && age <= 100) {
+        return {
+            name: "Very-Old",
+            status: "danger"
+        }
+    } else {
+        return {
+            name: "Bhoot / Jin",
+            status: "dark"
+        }
+    }
+
+}
 

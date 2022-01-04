@@ -151,7 +151,7 @@ formsubmit.addEventListener("submit", (e) => {
     else if (
         curSelect.value === curSelect.children[1].value
     ) {
-        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[1].value} USD  </p> `
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} USD = ${ curAmount.value * curSelect.children[1].value}Taka   </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
     } 
@@ -160,37 +160,37 @@ formsubmit.addEventListener("submit", (e) => {
     else if (
         curSelect.value === curSelect.children[2].value
     ) {
-        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[2].value} ERO </p> `
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} ERO = ${ curAmount.value * curSelect.children[2].value} Taka </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
     } else if (
         curSelect.value === curSelect.children[3].value
     ) {
-        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[3].value} CAD </p> `
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} CAD = ${ curAmount.value * curSelect.children[3].value} Taka </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
     } else if (
         curSelect.value === curSelect.children[4].value
     ) {
-        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[4].value} SAR </p> `
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} SAR = ${ curAmount.value * curSelect.children[4].value} Taka </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
     } else if (
         curSelect.value === curSelect.children[5].value
     ) {
-        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[5].value} GBP </p> `
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} GBP = ${ curAmount.value * curSelect.children[5].value} Taka </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
     } else if (
         curSelect.value === curSelect.children[6].value
     ) {
-        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[6].value} MYR </p> `
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} MYR = ${ curAmount.value * curSelect.children[6].value} Taka </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
     } else if (
         curSelect.value === curSelect.children[7].value
     ) {
-        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} Taka = ${ curAmount.value * curSelect.children[7].value} AED </p> `
+        currencyresult.innerHTML = `<p class="alert alert-success"> ${curAmount.value} AED = ${ curAmount.value * curSelect.children[7].value} Taka </p> `
         curAmount.value = "";
         curSelect.value = curSelect.children[0].value;
     } else if (
@@ -277,6 +277,7 @@ maragebutton.addEventListener("submit", (e) => {
         maragender.style.border = "1px solid red";
     } else{
         maragender.style.border = "1px solid green";
+        marrageresult.innerHTML = marageCal(marageinput.value,marageyear.value)
     }
 
 })

@@ -56,7 +56,8 @@ function marageCal(name, year) {
     let date = new Date();
     let age = date.getFullYear() - year;
     let marageAge = marageGgeCalStatus(age)
-    return `  <p class = "alert-green p-4"> Hi ${name} Your Gender ${maragender.value} you are ${age} years Old & You are ${marageAge.name} </p>`
+    let marage = marageStatus();
+    return `  <p class = "alert-${marageAge.status} p-4"> Hi ${name} Your Gender ${maragender.value} you are ${age} years Old Apnar  ${marageAge.name} </p>`
 
 
 }
@@ -65,38 +66,42 @@ function marageCal(name, year) {
 function marageGgeCalStatus(age) {
 
     
-    if (age > 0 && age <= 10) {
+    if (age > 0 && age <= 18) {
         return {
-            name: "Baby",
+            name: "Ary Apni Tho Basca",
             status: "primary"
         }
 
-    } else if (age > 10 && age <= 22) {
+    } else if (age > 18 && age <= 30) {
         return {
-            name: "Jobok",
+            name: "Biyar Boyos Hoicay Biya koran",
             status: "success"
         }
-    } else if (age > 22 & age <= 35) {
+    } else if (age > 30 & age <= 40) {
         return {
-            name: "Young",
+            name: "Kovy R biya korban Boyos Ses Holy Naki",
             status: "info"
         }
-    } else if (age > 35 && age <= 60) {
+    } else if (age > 40 && age <= 60) {
         return {
-            name: "Old",
+            name: "Ai boyos a Biya koira Ki korban ",
             status: "warning"
-        }
-    } else if (age > 60 && age <= 100) {
-        return {
-            name: "Very-Old",
-            status: "danger"
         }
     } else {
         return {
-            name: "Bhoot / Jin",
+            name: "apni R biya kora lagbo nah ",
             status: "dark"
         }
     }
 
+}
+
+function marageStatus() {
+
+ maragender.value === maragender.children[1]== "Male"
+    
+maragender.value == maragender.children[1]=== "Female"
+        
+    
 }
 
